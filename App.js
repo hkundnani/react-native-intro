@@ -16,7 +16,11 @@ const App = () => {
           component={Home}
           options={{ headerTitleStyle: { alignSelf: "center" } }}
         />
-        <Stack.Screen name="ColorPalette" component={ColorPalette} />
+        <Stack.Screen
+          name="ColorPalette"
+          component={ColorPalette}
+          options={({ route }) => ({ title: route.params.paletteName })}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
